@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "gym_app": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "gym_app",
+    "password": "",
+    "name": "gym_app",
+    "user": "",
+    "connector": "mongodb"
+  }
+}

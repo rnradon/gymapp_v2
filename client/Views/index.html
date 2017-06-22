@@ -1,0 +1,133 @@
+
+<link rel="stylesheet" type="text/css" href="res/css/indexPageSponsorCSS.css">
+<!-- <link rel="stylesheet" type="text/css" href="res/css/cardsCSS.css"> -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="searchWrap" style = " display:flex; flex-direction:column; justify-content:space-between;align-items:center; ">
+	<h1 style = "padding-bottom:20px; font-weight:700; font-size:60px;">Making Sponsorships Easy</h1>
+	<div class = "col-md-5 search" style = "background-color:white; height:60px;padding:0px; margin-bottom:40px; margin-top:5px"> 
+		<div class = "wrapper" style = "display:flex;border: 1px solid white; border-radius:2px; height:60px;border:0;" >
+
+			<input type="url" class="form-control" id="search" placeholder="Search Events , Sponsors and Organisers..." style = "border-style:none; outline:none; box-shadow:none; height:60px;font-size:20px;" >
+			<a href = "#">
+				<div style="border-left:1px solid grey; margin-right:20px; height:60px;">
+					<i class="fa fa-search" aria-hidden="true" style = "font-size:24px; padding: 17px 0px; color:grey; margin-left:20px; height:50px;">
+
+					</i>
+				</div>
+			</a>
+		</div>
+	
+
+	<div class = "mainButtons col-md-12" style = "align-items:center;margin-top: 50px;">
+
+		<div class = "col-md-6" style = "padding:20px; text-align:right">
+			<a href="#event-organiser"><button type="submit" class="btn btn-info" id = "submitButton" style="height:60px;" >
+				<span>I am an Event Organiser</span>
+			</button></a>
+		</div>
+
+		<div class = "col-md-6" style = "padding:20px; text-align:left">
+			<a href="#sponsor"><button type="submit" class="btn btn-info" id = "submitButton" style=" height:57px; width:235px;" >
+				<span>I am a Sponsor</span>
+			</button></a>
+		</div>
+	</div>
+	</div>
+
+</div>
+
+
+<div class="container" id="event-organiser">
+	<div style = "text-align:center; ">
+		<br/><br/>
+		<h2> Active Event Organisers</h2>
+
+		<h3 style="color:">Discover Amazing Events on our Platform</h3>
+		<br>
+	
+	</div>
+	<div class = "col-md-12" style="padding-bottom:20px;">
+		<!-- <div class="col-md-12 tab-pane fade" id="pastEvents" style="padding: 2px 0"> -->
+		<div style="padding: 30px 0">
+			<div class="addEvent1 col-md-3" ng-include="'Views/eventCard.html'" style="padding: 0">
+			</div>
+			<div class="addEvent1 col-md-3" ng-include="'Views/eventCard.html'" style="padding: 0">
+			</div>
+			<div class="addEvent1 col-md-3" ng-include="'Views/eventCard.html'" style="padding: 0">
+			</div>
+			<div class="addEvent1 col-md-3" ng-include="'Views/sponsorCard.html'" style="padding: 0">
+			</div>
+
+		</div>
+		<div style="text-align:center;">
+			<button type="submit" class="btn btn-info" id = "submitButton" style=" height:50px; background-color:transparent;color:#0C6D97;">
+				<span>Show More</span>
+			</button>
+
+		</div>
+	</div>
+</div>
+<div class="col-sx-12 col-sm-12 col-md-12" style="padding-bottom:50px;">
+	<h1 style="text-align:center;">How EventsCrunch helps Orgainsers</h1>
+	<br><br><br>
+	<div class="col-sx-12 col-sm-4 col-md-4" style="display:flex;flex-direction:column;align-items:center;text-align:center;">
+		<img src="res/img/deal.png" style="height:100px;">
+		<h2>Get Exposed to potential Sponsors</h2>
+	</div>
+	<div class="col-sx-12 col-sm-4 col-md-4" style="display:flex;flex-direction:column;align-items:center;text-align:center;">
+		<img src="res/img/target.png" style="height:100px;">
+		<h2>Sponsor Leads</h2>
+	</div>
+	<div class="col-sx-12 col-sm-4 col-md-4" style="display:flex;flex-direction:column;align-items:center;text-align:center;">
+		<img src="res/img/media.png" style="height:100px;">
+		<h2>Media Partners</h2>
+	</div>
+
+</div>
+<div class="container" id="sponsor">
+	<div style = "text-align:center;">
+		<br/><br/>
+		<h2>Active Sponsors</h2>
+
+		<h3>Get your Events Funded through our Platform</h3>
+		<br/>
+	</div>
+	<div class = "col-md-12">
+		<!-- <div class="col-md-12 tab-pane fade" id="pastEvents" style="padding: 2px 0"> -->
+		<div style="padding: 30px 0">
+			<div class="addEvent1 col-md-3" ng-include="'Views/sponsorCard.html'" style="padding: 0">
+			</div>
+			<div class="addEvent1 col-md-3" ng-include="'Views/sponsorCard.html'" style="padding: 0">
+			</div>
+			<div class="addEvent1 col-md-3" ng-include="'Views/sponsorCard.html'" style="padding: 0">
+			</div>
+			<div class="addEvent1 col-md-3" ng-include="'Views/sponsorCard.html'" style="padding: 0">
+			</div>
+
+		</div>
+		<div style="text-align:center;">
+			<button type="submit" class="btn btn-info" id = "submitButton" style="height:50px;background-color:transparent;color:#0C6D97;">
+				<span>Show more</span>
+			</button>
+
+		</div>
+	</div>
+</div>
+<div class="col-sx-12 col-sm-12 col-md-12">
+	<h1 style="text-align:center;">How EventsCrunch helps Brands</h1>
+	<br><br><br>
+	<div class="col-sx-12 col-sm-4 col-md-4" style="display:flex;flex-direction:column;align-items:center;">
+		<img src="res/img/curated.png" style="height:100px;">
+		<h2>Get Curated Results</h2>
+	</div>
+	<div class="col-sx-12 col-sm-4 col-md-4" style="display:flex;flex-direction:column;align-items:center;">
+		<img src="res/img/report.png" style="height:100px;">
+		<h2>Post Sponsorship Reports</h2>
+	</div>
+	<div class="col-sx-12 col-sm-4 col-md-4" style="display:flex;flex-direction:column;align-items:center;">
+		<img src="res/img/compare.png" style="height:100px;">
+		<h2>Compare Events With ROI</h2>
+	</div>
+
+</div>

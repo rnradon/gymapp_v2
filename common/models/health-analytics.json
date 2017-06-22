@@ -1,0 +1,56 @@
+{
+  "name": "health_analytics",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "age": {
+      "type": "number"
+    },
+    "sex": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "number"
+    },
+    "impedance": {
+      "type": "number"
+    },
+    "BMI": {
+      "type": "number"
+    },
+    "body_fat": {
+      "type": "number"
+    },
+    "muscle": {
+      "type": "number"
+    },
+    "water": {
+      "type": "number"
+    },
+    "protein": {
+      "type": "number"
+    },
+    "bone_mass": {
+      "type": "number"
+    },
+    "BMR": {
+      "type": "number"
+    },
+    "visceral_fat": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "gymUser": {
+      "type": "belongsTo",
+      "model": "gym_user",
+      "foreignKey": "registration_number"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

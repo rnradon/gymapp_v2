@@ -1,0 +1,46 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "gym_app"
+  },
+  "AccessToken": {
+    "dataSource": "gym_app",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "gym_app",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "gym_app",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "gym_app",
+    "public": false
+  },
+  "gym_user": {
+    "dataSource": "gym_app",
+    "public": true
+  },
+  "health_analytics": {
+    "dataSource": "gym_app",
+    "public": true
+  }
+}
