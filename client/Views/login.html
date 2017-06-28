@@ -1,70 +1,66 @@
-<link rel="stylesheet" href="res/css/loginCSS.css">
-<!-- <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-<script src="../jquery-1.9.1.min.js"></script>
-<script src="../bootstrap/js/bootstrap.min.js"></script> -->
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<div class="container">    
-	<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
-		<div class="panel panel-info" >
-				<!-- <div style="position:absolute;top:32px;left:35px; border-radius:50%; background:transparent !important; border:1px solid grey !important;" id="btn-signup"  class="btn btn-success">	<a style="color:grey;"href="#/login-options" onClick="$('#loginbox').hide(); $('#signupbox').show()">
-					&lt
-				</a>    </div> -->
-				<br>
-				<h4 class="text-center" style="color:rgba(14, 12, 17, 0.84)">Log In with Email</h4>
-				<h5 class="text-center" style="color:#666666">Good to have you back!</h5>
-				<br>
-
-				<div style="padding-top:30px" class="panel-body" >
-
-					<div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-
-					<form id="loginform" class="form-horizontal" role="form">
-
-						<div style="width:100%;height:50px;margin-bottom:20px;padding:0 60px" class="input-group">
-							<input style="height:50px;" id="login-username" type="text" class="form-control" name="username" value="" placeholder="Email">                                        
-						</div>
-
-						<div style="width:100%;padding:0 60px" class="input-group">
-							<input style="height:50px;" id="login-password" type="password" class="form-control" name="password" placeholder="Password">
-						</div>
+<link rel="stylesheet" type="text/css" href="res/css/register_user/base.css"/>
 
 
-						<h5 class="text-center">Forgot password? <a style="color:black" href="/reset">RESET NOW</a></h5>
-						<br>
+<div class="container"> 
+<div class="row">
+<div class="col-md-3 col-sm-0 col-xs-0"></div>
+<div class="col-md-3 col-sm-0 col-xs-0"></div><br/>
+<div class="col-md-6 col-sm-12" id = "success" style="color: white;font-size: 13px;background-color: #4caf50;border-radius: 5px; display: none; width: 90%; text-align: center; margin-left: 5%;">
+  Credentials Submitted Successfully. You'll be redirected to admin page now !
+</div> 
+</div>
+</div>
+<div class="container"> 
+<div class="row">
+<div class="col-md-4 col-sm-0 col-xs-0"></div>
+<div class="col-md-4 col-sm-0 col-xs-0"></div><br/>
+<div class="col-md-6 col-sm-12" id = "error" style="color: white;font-size: 13px;background-color: #af4c4c;border-radius: 5px; display: none; width: 90%; text-align: center; margin-left: 5%;">
+  Enter the Correct Details !
+</div> 
+</div>
+</div>
+
+<div class="container" id="main_form"> 
+
+<iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+  <div id="contact" style="margin-top: 30%; margin-bottom: 0%">
+    <h3 class="text-center"> Log In </h3>
+    <h4>Good to have you back !</h4>
+
+    <form id = "myForm" action="/api/Users/login" method="post" target="dummyframe">
+    <fieldset>
+      <input placeholder="Username" type="text" tabindex="1" required autofocus name="username" style="width: 100%; padding-left: 10px;">
+    </fieldset>
+    <fieldset>
+      <input placeholder="Password" type="password" tabindex="2" required name="password" style="width: 100%; padding-left: 10px; ">
+    </fieldset>
+    
+      <button  class="btn btn-primary" name="submit" type="submit">Submit</button>
+      <script>
+
+      $('#myForm')
+      .ajaxForm({
+        url : '/api/Users/login', // or whatever
+        dataType : 'json',
+        type: "POST",
+        success : function (response) {
+            document.getElementById("success").style.display = "block";
+            $('#success').delay(4000).fadeOut(300);
+            console.log(response.id)
+            
+             setTimeout(function() { window.location.replace('/admin?access_token=' + response.id); }, 2000)
+            
+        },
+        error: function (response) {
+            document.getElementById("error").style.display = "block";
+            $('#error').delay(4000).fadeOut(300);
+            var resp = response.responseText
+            console.log(resp)
+            console.log(response)
+        },
+    });
+      </script>
+    
+</div>
 
 
-
-						<div style="margin-bottom:0px" class="form-group">
-							<!-- Button -->
-
-							<div class="col-sm-12 text-center controls" style="border-top: 1px solid#888; padding-top:15px;">
-								
-								<div style="width:45%; height:50px" id="btn-login-2"  class="btn btn-primary">	<a href="http://organiser.beta.eventscrunch.com" target="_self" style = "color: #ffffff;"><div style="padding-top:10px;color:inherit;">LOG IN ORGANISER</div></a>    
-								</div>
-								<div style="width:45%; height:50px" id="btn-login-2"  class="btn btn-primary">	<a href="http://sponsor.beta.eventscrunch.com" target="_self" style = "color: #ffffff;"><div style="padding-top:10px;color:inherit;">LOG IN SPONSOR</div></a>    
-								</div>
-
-
-						</div>
-
-
-					</form>     
-
-
-
-				</div>                     
-			</div>  
-		</div>
-
-	</div>
-
-
- <!--  <select class="form-control" required>
-        <option>--Please Select--</option>
-          <option>Andhra Pradesh</option>
-          <option>Karnataka</option>
-          <option>Kerala</option>
-          <option>Tamilnadu</option>
-        </select> -->

@@ -1,30 +1,16 @@
 (function(){
 
-    var app = angular.module("myApp", ["ngRoute","ui.router"]);
+    var app = angular.module("myApp", ['ngRoute', 'lbServices']);
     app.config(function($routeProvider, $locationProvider) {
-        // $stateProvider
-        //     .state('add-review', {
-        //         url: '/gym_users:userId?',
-        //         templateUrl: 'Views/index.html',
-        //         // controller: 'AddReviewController',
-        //         authenticate: true
-        //     });
         $routeProvider
             .when("/", {
-                templateUrl : "Views/login.html",
-                showHeader : false
+                templateUrl : "Views/index.html"
             })
-            .when("/admin:userId?", {
-                templateUrl : "Views/admin_landing_page.html",
-                showHeader : true
+            .when("/home", {
+                templateUrl : "Views/index.html"
             })
-            .when("/add_gym_users:userId?", {
-                templateUrl : "Views/register_user.html",
-                showHeader : true
-            })
-            .when("/del_gym_users:userId?", {
-                templateUrl : "Views/del_user.html",
-                showHeader : true
+            .when("/reset", {
+                templateUrl : "Views/reset.html"
             })
             .when("/guidelines", {
                 templateUrl : "Views/guidelines.html"
@@ -75,7 +61,7 @@
                 templateUrl : "Views/hiwevents.html"
             })
              .when("/events", {
-                templateUrl : "../Views/eventSearch.html"
+                templateUrl : "Views/index.html"
             })
             .when("/sponsor", {
                 templateUrl : "../Views/sponsorSearch.html"
@@ -86,13 +72,21 @@
     //        .otherwise({
     //            templateUrl : "../Views/Index_view.html"
     //        });
+
+
+    	app.use(function(req, res) {
+   		 res.sendfile('../index2.html');
+			});
+    	
         $locationProvider.html5Mode(true);
+
+
+    //     app.get('*', function(req, res) {
+  		// res.sendfile('../index2.html')
+	// })
     });
 
-// run(['$rootScope', function($rootScope) {
-//     $rootScope.$on("$routeChangeSuccess", function(event, next, current) {
-//         $rootScope.showHeader = next.$$route.showHeader;
-//     });
-// }]);
+
+   
 
 })();
