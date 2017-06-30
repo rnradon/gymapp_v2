@@ -18,13 +18,27 @@
                 templateUrl : "Views/admin_landing_page.html",
                 showHeader : true
             })
-            .when("/add_gym_users:userId?", {
+            .when("/add_gym_user:userId?", {
                 templateUrl : "Views/register_user.html",
                 showHeader : true
             })
-            .when("/del_gym_users:userId?", {
+            .when("/del_gym_user:userId?", {
                 templateUrl : "Views/del_user.html",
                 showHeader : true
+            })
+            .when("/del_gym_user/user_found/id=:id/:access_token", {
+                templateUrl : "Views/del_user_redirect.html",
+                showHeader : true,
+                controller: 'delete_user_controller'
+            })
+            .when("/edit_gym_user:userId?", {
+                templateUrl : "Views/edit_user.html",
+                showHeader : true
+            })
+            .when("/edit_gym_user/user_found/id=:id/:access_token", {
+                templateUrl : "Views/edit_user_redirect.html",
+                showHeader : true,
+                controller: 'edit_user_controller'
             })
             .when("/guidelines", {
                 templateUrl : "Views/guidelines.html"
@@ -88,6 +102,36 @@
     //        });
         $locationProvider.html5Mode(true);
     });
+
+
+
+
+     app.controller('delete_user_controller', ['$routeParams', '$scope', '$http', function($routeParams, $scope, $http ) {
+        
+        var id = $routeParams.id
+        var access_token = $routeParams.access_token
+        $http.get('/api/gym_users/findOne?filter[where][id]=' + id + '&' + access_token)
+        .then(function(response) {
+        $scope.users_json_data = response.data;
+        // $scope.reg_number = $routeParams.registration_number;
+        alert("CONTROLLER WORKS")
+        });
+    }]);
+
+
+     app.controller('edit_user_controller', ['$routeParams', '$scope', '$http', function($routeParams, $scope, $http ) {
+        
+        var id = $routeParams.id
+        var access_token = $routeParams.access_token
+        $http.get('/api/gym_users/findOne?filter[where][id]=' + id + '&' + access_token)
+        .then(function(response) {
+        $scope.users_json_data = response.data;
+        // $scope.reg_number = $routeParams.registration_number;
+        alert("CONTROLLER WORKS")
+        });
+    }]);
+
+
 
 // run(['$rootScope', function($rootScope) {
 //     $rootScope.$on("$routeChangeSuccess", function(event, next, current) {

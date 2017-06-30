@@ -43,7 +43,7 @@
 
 <!-- <iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe" style="display: none;"></iframe> -->
   <div id="contact" style="margin-top: 10%; margin-bottom: 10%">
-    <h3>Delete Gym User</h3>
+    <h3>Edit Gym User</h3>
     <h4>Enter the registration number of the user</h4>
 
     <script>
@@ -84,7 +84,7 @@
                 //       $scope.myWelcome = response.data;
                 //   });
                 // });
-                window.location.replace('/del_gym_user/user_found/id=' + response.id + '/' + access_token)
+                window.location.replace('/edit_gym_user/user_found/id=' + response.id + '/' + access_token)
             },
             error: function (response) {
                 alert("Invalid Registration Number. The page will reload automatically. Please enter the correct Registration Number")
