@@ -18,84 +18,47 @@
         });
     </script>
     <a href="" id="back_to_admin_landing_page"><button name="submit" type="submit" id="contact-submit" style="background-color: #4c96af; margin-bottom: 3%">Back</button></a>
-    <form id = "myForm" action="/api/gym_users" method="post" target="dummyframe">
+    <form id = "myForm" action="" method="put" target="dummyframe">
     <fieldset>
-      {{users_json_data.registration_number}}
+      <input id="registration_number" type="number" tabindex="1" name="registration_number" required value={{users_json_data.registration_number}}  style="width: 100%; padding-left: 10px;">
     </fieldset>
     <fieldset>
-      <input placeholder="Re Enter Registration Number" type="number" tabindex="2" required name="username" style="width: 100%; padding-left: 10px; ">
+      <input placeholder="Name" type="text" tabindex="3" value={{users_json_data.name}} required name="name">
     </fieldset>
     <fieldset>
-      <input placeholder="Name" type="text" tabindex="3" required name="name">
+      <input placeholder="Address" type="text" tabindex="4" value={{users_json_data.address}} required name="address">
     </fieldset>
     <fieldset>
-      <input placeholder="Address" type="text" tabindex="4" required name="address">
-    </fieldset>
-    <fieldset>
-      <input placeholder="Email" type="email" tabindex="5" required name="email">
+      <input placeholder="Email" type="email" tabindex="5" value={{users_json_data.email}} required name="email">
     </fieldset>
     <fieldset>
       <div class="row">
       <div class="col-md-1 col-sm-1 col-xs-1" style="border: 1px solid #ccc; background: #f0f0f0; margin-left:15px; padding: 0.9%;">+91</div>
       <div class="col-md-1 col-sm-1 col-xs-1" style="padding:0px;margin: 1%;margin-right: -15px;margin-left: 10px;">-</div>
       <div class="col-md-9 col-sm-9 col-xs-9" style="padding: 0px;width: 76%">
-      <input  placeholder="Phone Number" type="tel" pattern="[789][0-9]{9}" tabindex="6" required name="phone_number" style="width: 100%;">
-      </div>
-      </div>
-    </fieldset>
-    <fieldset>
-      <div class="row">
-      <div class="col-md-1 col-sm-1 col-xs-1" style="border: 1px solid #ccc; background: #f0f0f0; margin-left:15px; padding: 0.9%;">+91</div>
-      <div class="col-md-1 col-sm-1 col-xs-1" style="padding:0px;margin: 1%;margin-right: -15px;margin-left: 10px;">-</div>
-      <div class="col-md-9 col-sm-9 col-xs-9" style="padding: 0px;width: 76%">
-      <input  placeholder="Re Enter Phone Number" type="tel" pattern="[789][0-9]{9}" tabindex="7" required name="password" style="width: 100%;">
+      <input  placeholder="Phone Number" type="tel" pattern="[789][0-9]{9}" tabindex="6" required value={{users_json_data.phone_number}} name="phone_number" style="width: 100%;">
       </div>
       </div>
     </fieldset>
     
-      <button name="submit" type="submit" id="contact-submit">Submit</button>
+      <button name="submit" type="submit" id="contact-submit" class="edit">Submit</button>
       <script>
 
-      $('#myForm')
-      .ajaxForm({
-        url : '/api/gym_users', // or whatever
-        dataType : 'json',
-        success : function (response) {
-            document.getElementById("success").style.display = "block";
-            $('#success').delay(4000).fadeOut(300);
-            var resp = response.responseText
-            console.log(resp)
-            // location.delay(2000).reload();
-             setTimeout(function() { window.location.reload(true); }, 2000)
-        },
-        error: function (response) {
-            document.getElementById("error").style.display = "block";
-            $('#error').delay(4000).fadeOut(300);
-            var resp = response.responseText
-            console.log(resp)
-        },
-    });
-      </script>
-    
-</div>
+      $(".edit").click(function(event){
+        var unsorted_url = window.location.pathname.split('id=');
+         unsorted_url = unsorted_url[1].split('/access_token=');
+        alert("WORKING")
+        console.log(unsorted_url)
+    var id = unsorted_url[0]
+    var access_token = unsorted_url[1]
 
-
-<script>
-      
-        $("#delete").click(function(event){
-       	var unsorted_url = window.location.pathname.split('id=');
-       	 unsorted_url = unsorted_url[1].split('/access_token=');
-       	
-       	console.log(unsorted_url)
- 		var id = unsorted_url[0]
- 		var access_token = unsorted_url[1]
-
-         $.ajax({
-            method: 'DELETE',
+         $('#myForm')
+        .ajaxForm({
+            method: 'PUT',
             url : '/api/gym_users/' + id + '?' + 'access_token=' + access_token, // or whatever
             dataType : 'json',
             success : function (response) {
-                alert("Successfully deleted the user. Page will reload to delete users page")
+                alert("Successfully edited the user.")
                 // var app = angular.module('my_app', []);
                 // app.controller('myCtrl', function($scope, $http) {
                 //   $http.get('/api/gym_users/findOne?filter[where][registration_number]=' + reg_number + '&' + access_token)
@@ -103,7 +66,7 @@
                 //       $scope.myWelcome = response.data;
                 //   });
                 // });
-                window.location.replace('/del_gym_user?' + 'access_token=' +access_token)
+                window.location.replace('/admin?access_token=' + access_token); //CHANGE THIS TO VIEW USER CARD
             },
             error: function (response) {
                 alert("Invalid Registration Number. The page will reload automatically. Please enter the correct Registration Number")
@@ -113,6 +76,6 @@
           
         });
       
-
-      
       </script>
+    
+</div>

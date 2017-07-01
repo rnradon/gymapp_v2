@@ -40,6 +40,16 @@
                 showHeader : true,
                 controller: 'edit_user_controller'
             })
+            .when("/view_gym_users:userId?", {
+                templateUrl : "Views/view_users.html",
+                showHeader : true,
+                controller: 'view_users_controller'
+            })
+            .when("/view_gym_user/user_found/id=:id/:access_token", {
+                templateUrl : "Views/view_user_redirect.html",
+                showHeader : true,
+                // controller: 'edit_user_controller'
+            })
             .when("/guidelines", {
                 templateUrl : "Views/guidelines.html"
             })
@@ -130,6 +140,27 @@
         alert("CONTROLLER WORKS")
         });
     }]);
+
+
+     app.controller('view_users_controller', ['$routeParams', '$scope', '$http', function($routeParams, $scope, $http ) {
+        
+    
+        var access_token = $routeParams.access_token
+        $http.get('/api/gym_users?access_token=' + access_token)
+        .then(function(response) {
+        $scope.users_json_data = response.data;
+        // $scope.reg_number = $routeParams.registration_number;
+        alert("CONTROLLER WORKS")
+        });
+
+        $http.get('/api/gym_users/count?access_token=' + access_token)
+        .then(function(response) {
+        $scope.count = response.data;
+        // $scope.reg_number = $routeParams.registration_number;
+        alert("CONTROLLER WORKS")
+        });        
+    }]);
+
 
 
 
