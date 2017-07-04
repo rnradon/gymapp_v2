@@ -52,7 +52,7 @@
         $("#back_to_admin_landing_page").click(function back_to_admin_landing_page(){
           var access_token = window.location.search.substring(1);
           var url = '/admin?' + access_token
-          window.location.replace(url)
+          window.location.href = url
         });
     </script>
     <a href="" id="back_to_admin_landing_page"><button name="submit" type="submit" id="contact-submit" style="background-color: #4c96af; margin-bottom: 3%">Back</button></a>
@@ -86,7 +86,8 @@
                 //       $scope.myWelcome = response.data;
                 //   });
                 // });
-                window.location.replace('/edit_gym_user/user_found/id=' + response.id + '/' + access_token)
+                var url = '/edit_gym_user/user_found/id=' + response.id + '/' + access_token
+                window.location.href = url
             },
             error: function (response) {
                 alert("Invalid Registration Number. The page will reload automatically. Please enter the correct Registration Number")

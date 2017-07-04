@@ -49,6 +49,11 @@
                 templateUrl : "Views/view_user_redirect.html",
                 
                 // controller: 'edit_user_controller'
+            })
+            .when("/charts", {
+                templateUrl : "Views/charts.html",
+                
+                // controller: 'edit_user_controller'
             });
 
 

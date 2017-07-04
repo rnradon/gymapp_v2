@@ -24,31 +24,31 @@
   $("#add_user_tag").click(function add_user_url(){
   	var access_token = window.location.search.substring(1);
   	var url = '/add_gym_user?' + access_token
-  	window.location.replace(url)
+  	window.location.href = url
   });
 
     $("#del_user_tag").click(function del_user_url(){
   	var access_token = window.location.search.substring(1);
   	var url = '/del_gym_user?' + access_token
-  	window.location.replace(url)
+  	window.location.href = url
   });
 
     $("#edit_user_tag").click(function edit_user_url(){
   	var access_token = window.location.search.substring(1);
   	var url = '/edit_gym_user?' + access_token
-  	window.location.replace(url)
+  	window.location.href = url
   });
 
     $("#view_users_tag").click(function view_users_url(){
   	var access_token = window.location.search.substring(1);
   	var url = '/view_gym_users?' + access_token
-  	window.location.replace(url)
+  	window.location.href = url
   });
 </script>
 <div id="main">
 <div ng-include src="'Views/header.html'"></div>
 <div class="container col-md-12 col-xs-12 col-lg-12 col-sm-12" id = "page_view" style="margin-top: 15%; display: none">
-<a href="" id="add_user_tag" style="color: rgba(51,183,110,0.91);"><div class="col-md-3" ng-include="'Views/add_user_card.html'"></div></a>
+<a href="#" id="add_user_tag" style="color: rgba(51,183,110,0.91);"><div class="col-md-3" ng-include="'Views/add_user_card.html'"></div></a>
 <a href="" id="del_user_tag" style="color: rgba(183,51,61,0.91);"><div class="col-md-3" ng-include="'Views/del_user_card.html'"></div></a>
 <a href="" id="edit_user_tag" style="color: rgba(183,132,51,0.91);"><div class="col-md-3" ng-include="'Views/edit_user_card.html'"></div></a>
 <a href="" id="view_users_tag" style="color: rgba(51,144,183,1);"><div class="col-md-3" ng-include="'Views/view_user_card.html'"></div></a>

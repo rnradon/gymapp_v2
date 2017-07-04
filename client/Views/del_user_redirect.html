@@ -16,7 +16,7 @@
 		 		  var id = unsorted_url[0]
 		 		  var access_token = unsorted_url[1]
 		          var url = '/del_gym_user?' + 'access_token=' + access_token
-		          window.location.replace(url)
+		          window.location.href = url
 		        });
 		    </script>
 		    <a href="" id="back_to_del_landing_page" class="btn btn-info backBtn" style="margin-top: 5%"><span>Back</span></a>
@@ -80,7 +80,8 @@
                 //       $scope.myWelcome = response.data;
                 //   });
                 // });
-                window.location.replace('/del_gym_user?' + 'access_token=' +access_token)
+                var url = '/del_gym_user?' + 'access_token=' +access_token
+                window.location.href = url
             },
             error: function (response) {
                 alert("Invalid Registration Number. The page will reload automatically. Please enter the correct Registration Number")
