@@ -22,12 +22,14 @@
 
 
   <!-- my css -->
+<div id="main">
+<div ng-include src="'Views/header.html'"></div>
 <div ng-controller="view_users_controller">
 
 <link rel="stylesheet" type="text/css" href="res/css/searchBar.css">
   <link rel="stylesheet" type="text/css" href="res/css/del_user/card.css">
-<div class = "container"> 
-  <div class = "col-md-12" style="padding-top:70px;">
+>
+<div class = "container" class="col-md-12 col-xs-12 col-lg-12 col-sm-12" style="padding-top:70px;"> 
    <div class = "search" style = "background-color:white;padding:0;"> 
     <div class = "wrapper" style = "display:flex;border: 1px solid white; border-radius:2px;flex-wrap:wrap;justify-content:space-between" >
      <div style="display:flex;">
@@ -192,3 +194,4 @@
 
 
 
+</div>

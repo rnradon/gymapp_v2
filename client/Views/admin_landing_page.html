@@ -45,10 +45,12 @@
   	window.location.replace(url)
   });
 </script>
-
-<div class="container" id = "page_view" style="margin-top: 15%; display: none">
+<div id="main">
+<div ng-include src="'Views/header.html'"></div>
+<div class="container col-md-12 col-xs-12 col-lg-12 col-sm-12" id = "page_view" style="margin-top: 15%; display: none">
 <a href="" id="add_user_tag" style="color: rgba(51,183,110,0.91);"><div class="col-md-3" ng-include="'Views/add_user_card.html'"></div></a>
 <a href="" id="del_user_tag" style="color: rgba(183,51,61,0.91);"><div class="col-md-3" ng-include="'Views/del_user_card.html'"></div></a>
 <a href="" id="edit_user_tag" style="color: rgba(183,132,51,0.91);"><div class="col-md-3" ng-include="'Views/edit_user_card.html'"></div></a>
 <a href="" id="view_users_tag" style="color: rgba(51,144,183,1);"><div class="col-md-3" ng-include="'Views/view_user_card.html'"></div></a>
+</div>
 </div>

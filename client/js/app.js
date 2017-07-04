@@ -12,105 +12,50 @@
         $routeProvider
             .when("/", {
                 templateUrl : "Views/login.html",
-                showHeader : false
+                // showHeader : false,
             })
             .when("/admin:userId?", {
                 templateUrl : "Views/admin_landing_page.html",
-                showHeader : true
+                // showHeader : true,
             })
             .when("/add_gym_user:userId?", {
                 templateUrl : "Views/register_user.html",
-                showHeader : true
+                
             })
             .when("/del_gym_user:userId?", {
                 templateUrl : "Views/del_user.html",
-                showHeader : true
+                
             })
             .when("/del_gym_user/user_found/id=:id/:access_token", {
                 templateUrl : "Views/del_user_redirect.html",
-                showHeader : true,
+                
                 controller: 'delete_user_controller'
             })
             .when("/edit_gym_user:userId?", {
                 templateUrl : "Views/edit_user.html",
-                showHeader : true
+                
             })
             .when("/edit_gym_user/user_found/id=:id/:access_token", {
                 templateUrl : "Views/edit_user_redirect.html",
-                showHeader : true,
+                
                 controller: 'edit_user_controller'
             })
             .when("/view_gym_users:userId?", {
                 templateUrl : "Views/view_users.html",
-                showHeader : true,
+                
                 controller: 'view_users_controller'
             })
             .when("/view_gym_user/user_found/id=:id/:access_token", {
                 templateUrl : "Views/view_user_redirect.html",
-                showHeader : true,
+                
                 // controller: 'edit_user_controller'
-            })
-            .when("/guidelines", {
-                templateUrl : "Views/guidelines.html"
-            })
-            .when("/tnc", {
-                templateUrl : "Views/tnc.html"
-            })
-            .when("/privacy", {
-                templateUrl : "Views/privacy.html"
-            })
-            .when("/team", {
-                templateUrl : "Views/team-members.html"
-            })
-             .when("/brand", {
-                templateUrl : "Views/brand.html"
-            })
-             .when("/campus", {
-                templateUrl : "Views/campus.html"
-            })
-            .when("/login", {
-                templateUrl: "Views/login.html"
-            })
-            .when("/join", {
-                templateUrl: "Views/join.html"
-            })
-            .when("/signup/sponsor", {
-                templateUrl: "Views/sponsorSingUp.html"
-            })
-            .when("/signup/organiser", {
-                templateUrl: "Views/organiserSignUp.html"
-            })
-            .when("/contact", {
-                templateUrl : "Views/contactUs.html"
-            })
-            .when("/faq", {
-                redirectTo: "/faq-event-organiser"
-            })
-            .when("/faq-event-organiser", {
-                templateUrl : "Views/faq-event-org.html"
-            })
-            .when("/faq-sponsor", {
-                templateUrl : "Views/faq-sponsor.html"
-            })
-            .when("/howitworks", {
-                redirectTo: "/howitworksevents"
-            })
-            .when("/howitworksevents", {
-                templateUrl : "Views/hiwevents.html"
-            })
-             .when("/events", {
-                templateUrl : "../Views/eventSearch.html"
-            })
-            .when("/sponsor", {
-                templateUrl : "../Views/sponsorSearch.html"
-            })
-            .when("/howitworkssponsors", {
-                templateUrl : "Views/hiwsponsors.html"
             });
-    //        .otherwise({
-    //            templateUrl : "../Views/Index_view.html"
-    //        });
+
+
         $locationProvider.html5Mode(true);
+
+
+        
     });
 
 
