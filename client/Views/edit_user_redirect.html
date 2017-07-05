@@ -14,8 +14,13 @@
 
     <script>
         $("#back_to_admin_landing_page").click(function back_to_admin_landing_page(){
-          var access_token = window.location.search.substring(1);
-          var url = '/admin?' + access_token
+          var unsorted_url = window.location.pathname.split('id=');
+          unsorted_url = unsorted_url[1].split('/access_token=');
+          alert("WORKING")
+          console.log(unsorted_url)
+          var id = unsorted_url[0]
+          var access_token = unsorted_url[1]
+          var url = '/admin?access_token=' + access_token
           window.location.href = url
         });
     </script>

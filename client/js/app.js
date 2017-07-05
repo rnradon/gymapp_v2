@@ -1,6 +1,6 @@
 (function(){
 
-    var app = angular.module("myApp", ["ngRoute","ui.router"]);
+    var app = angular.module("myApp", ["ngRoute","ui.router",'chartjs-directive']);
     app.config(function($routeProvider, $locationProvider) {
         // $stateProvider
         //     .state('add-review', {
@@ -112,6 +112,8 @@
     }]);
 
 
+
+     
 
 
 // run(['$rootScope', function($rootScope) {

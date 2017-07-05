@@ -14,33 +14,33 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "gym_app_database"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "gym_app_database",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "gym_app_database",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "gym_app_database",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "gym_app_database",
     "public": false
   },
   "gym_user": {
-    "dataSource": "db",
+    "dataSource": "gym_app_database",
     "public": true
   },
   "health_analytics": {
-    "dataSource": "db",
+    "dataSource": "gym_app_database",
     "public": true
   }
 }

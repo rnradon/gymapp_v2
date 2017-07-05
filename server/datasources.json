@@ -2,5 +2,15 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "gym_app_database": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "gym_app_database",
+    "password": "",
+    "name": "gym_app_database",
+    "user": "",
+    "connector": "mongodb"
   }
 }
