@@ -82,7 +82,7 @@
         .then(function(response) {
         $scope.users_json_data = response.data;
         // $scope.reg_number = $routeParams.registration_number;
-        alert("CONTROLLER WORKS")
+        // alert("CONTROLLER WORKS")
         });
     }]);
 
@@ -95,7 +95,7 @@
         .then(function(response) {
         $scope.users_json_data = response.data;
         // $scope.reg_number = $routeParams.registration_number;
-        alert("CONTROLLER WORKS")
+        // alert("CONTROLLER WORKS")
         });
     }]);
 
@@ -111,7 +111,7 @@
         // $scope.data=[10,90];    //REMEMBER
         
         // $scope.reg_number = $routeParams.registration_number;
-        alert("CONTROLLER WORKS")
+        // alert("CONTROLLER WORKS")
         });
 
         $http.get('/api/gym_users/count?access_token=' + access_token)
@@ -119,7 +119,7 @@
         $scope.count = response.data;
 
         // $scope.reg_number = $routeParams.registration_number;
-        alert("CONTROLLER WORKS")
+        // alert("CONTROLLER WORKS")
         });  
 
 
