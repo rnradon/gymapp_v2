@@ -4,9 +4,9 @@
   $.ajax({ url: '/api/gym_users?' + access_token ,
           context: document.body,
           success: function(response){
-             alert("done");
+             
              document.getElementById("page_view").style.display = "block";
-             var add_user_url = '/gym_users?' + access_token
+             console.log("SUCCESS " + response)
           },
           error: function (response) {
             // document.getElementById("error").style.display = "block";

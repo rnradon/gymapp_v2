@@ -23,8 +23,8 @@
     "user": "root",
     "connector": "mongodb"
 },
-  "emailIDs": {
-    "name": "emailIDs",
+  "Email": {
+    "name": "Email",
     "connector": "mail",
     "transports": [
       {

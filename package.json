@@ -7,8 +7,9 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "node server.js",
-    "posttest": "npm run lint && nsp check"
+    "posttest": "npm run lint && nsp check",
+    "start": "node server/server.js",
+    "deploy": "gcloud app deploy  --project scenic-parity-172915"
   },
   "dependencies": {
     "angular-chart.js": "^1.1.1",
@@ -28,6 +29,7 @@
   "devDependencies": {
     "eslint": "^3.17.1",
     "eslint-config-loopback": "^8.0.0",
+    "grunt-loopback-auto": "0.0.5",
     "nsp": "^2.1.0"
   },
   "repository": {

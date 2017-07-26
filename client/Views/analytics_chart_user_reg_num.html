@@ -6,12 +6,8 @@
   $.ajax({ url: '/api/gym_users?' + access_token ,
           context: document.body,
           success: function(response){
-             
-             document.getElementById("page_view").style.display = "block";
-             console.log("SUCCESS " + response)
-             
+             alert("done");
           },
-          
           error: function (response) {
             // document.getElementById("error").style.display = "block";
             // $('#error').delay(4000).fadeOut(300);
@@ -44,13 +40,13 @@
 </div> 
 </div>
 </div>
-<div id = "page_view" style="display: none;">
+
 <div class="container " id="main_form"> 
 
 <!-- <iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe" style="display: none;"></iframe> -->
   <div id="contact" style="margin-top: 10%; margin-bottom: 10%">
-    <h3>Delete Gym User</h3>
-    <h4>Enter the registration number of the user</h4>
+    <h3>Analysis !</h3>
+    <h4>Enter the registration number to get the analytics of that member </h4>
 
     <script>
         $("#back_to_admin_landing_page").click(function back_to_admin_landing_page(){
@@ -73,7 +69,7 @@
       $(document).ready(function(){
         $("button").click(function (){
           var reg_number = $("#registration_number").val();
-
+          alert(reg_number)
         var access_token = window.location.search.substring(1);
         $('#myForm')
           .ajaxForm({
@@ -90,7 +86,7 @@
                 //       $scope.myWelcome = response.data;
                 //   });
                 // });
-                var url = '/del_gym_user/user_found/id=' + response.id + '/' + access_token
+                var url = '/analytics_gym_user/user_found/gymUserId=' + response.id + '/' + access_token
                 window.location.href = url
             },
             error: function (response) {
@@ -106,6 +102,5 @@
       
       </script>
     
-</div>
 </div>
 </div>

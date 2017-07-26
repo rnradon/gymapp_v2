@@ -14,7 +14,8 @@
     ]
   },
   "User": {
-    "dataSource": "gym_app_database"
+    "dataSource": "gym_app_database",
+    "public": false
   },
   "AccessToken": {
     "dataSource": "gym_app_database",
@@ -40,6 +41,13 @@
     "public": true
   },
   "health_analytics": {
+    "dataSource": "gym_app_database",
+    "public": true
+  },
+  "Email": {
+    "dataSource": "emailIDs"
+  },
+   "user": {
     "dataSource": "gym_app_database",
     "public": true
   }

@@ -1,111 +1,43 @@
-<!-- <div ng-controller="view_users_controller">
-<h1 ng-repeat="x in users_json_data">{{x.name}} {{x.phone_number}}</h1>
-</div>
-<link rel="stylesheet" type="text/css" href="rs/css/table.css">
-<table class="table table-hover">
-    <thead>
-      <tr style="background-color: white;">
-        <th style=" text-align: center;">Registration Number</th>
-        <th style=" text-align: center;">Name</th>
-        <th style=" text-align: center;">Email</th>
-      </tr>
-    </thead>
-    <tbody class="tableRow" style="background-color: #ececec">
-      <tr ng-repeat="user in users_json_data">
-        <td style=" text-align: center;"> {{user.phone_number}} </td>
-        <td style=" text-align: center;"> {{user.name}} </td>
-        <td style=" text-align: center;"> {{user.email}} </td>
-      </tr>
-    </tbody>
-  </table> -->
+<link rel="stylesheet" type="text/css" href="res/css/searchBar.css">
+<link rel="stylesheet" type="text/css" href="res/css/del_user/card.css">
 
 
-
-  <!-- my css -->
-<div id="main">
 <div ng-include src="'Views/header.html'"></div>
 <div ng-controller="view_users_controller">
-
-<link rel="stylesheet" type="text/css" href="res/css/searchBar.css">
-  <link rel="stylesheet" type="text/css" href="res/css/del_user/card.css">
->
-<div class = "container" class="col-md-12 col-xs-12 col-lg-12 col-sm-12" style="padding-top:70px;"> 
-   <div class = "search" style = "background-color:white;padding:0;"> 
-    <div class = "wrapper" style = "display:flex;border: 1px solid white; border-radius:2px;flex-wrap:wrap;justify-content:space-between" >
-     <div style="display:flex;">
-     <i class="fa fa-search" aria-hidden="true" style = "font-size:20px; padding:7px;"></i>
-     <input type="url" class="form-control" id="search" placeholder="Search..." style = "border-style:none; outline:none; box-shadow:none;width:52%" >
-   </div>
-<!--      <div style = "display:flex; align-self:center;width:380px;">
-      <div class="col-md-4">
-        <script type="text/javascript">
-          $(document).ready(function(){
-            $(".category").select2({
-             placeholder: "Category",
-             allowClear: true
-           });
-          });
-        </script>
-        <select class="category"  style="width:100%;border-style:none; outline:none; box-shadow:none;" >
-          <option></option>
-          <option>NightLife</option>
-          <option>Startups</option>
-          <option>Nightlife</option>
-          <option>Music</option>
-          <option>Comedy</option>
-          <option>Culture</option>
-          <option>Food + Drinks</option>
-          <option>Sports</option>
-          <option>Startups</option>
-          <option>College</option>
-          <option>Plays</option>
-          <option>Experiences</option>
-          <option>Workshops</option>
-          <option>Exhibitions</option>
-        </select>
+<script>
+  $(window).ready(function(){  
+  var access_token = window.location.search.substring(1);
+  $.ajax({ url: '/api/gym_users?' + access_token ,
+          context: document.body,
+          success: function(response){
+             
+             document.getElementById("page_view").style.display = "block";
+             console.log("SUCCESS " + response)
+             
+          },
+          error: function (response) {
+            // document.getElementById("error").style.display = "block";
+            // $('#error').delay(4000).fadeOut(300);
+            // var resp = response.responseText
+            // console.log(resp)
+            // console.log(response)
+            alert("You are not authenticated to view this page")
+            setTimeout(function() { window.location.replace('/'); }, 0000)
+          },
+        });
+  });
+</script>
+  
+  <div id="main">
+    <div class = "container" id = "page_view" style="display: none" class="col-md-12 col-xs-12 col-lg-12 col-sm-12"> 
+      <div class = "search" class="col-md-12" style = "background-color:white;padding:0;"> 
+        
+          
+          <div class="col-md-12">
+            <input type="url" class="form-control" id="search" placeholder="&#xF002; Search..."/ style="font-family: FontAwesome"> 
+          </div>
       </div>
-
-      <div class="col-md-4">
-        <script type="text/javascript">
-          $(document).ready(function(){
-            $(".location").select2({
-             placeholder: "Location",
-             allowClear: true
-           });
-          });
-        </script>
-        <select class="location" style="width:100%;" >
-          <option></option>
-          <option>Delhi</option>
-          <option>Noida</option>
-          <option>Gurgaon</option>
-          <option>NCR</option>
-        </select>
-      </div>
-
-      <div class="col-md-4">
-        <script type="text/javascript">
-          $(document).ready(function(){
-            $(".sponsorType").select2({
-             placeholder: "Type",
-             allowClear: true
-           });
-          });
-        </script>
-        <select class="sponsorType"  style="width:100%;" >
-          <option></option>
-          <option>Financial
-           <option>In Kind</option>
-           <option>Food</option>
-           <option>Venue</option>
-           <option>Labor</option>
-           <option>Media</option>
-           <option>Guest Speaker</option>
-         </select>
-       </div>
-     </div> -->
-   </div>
- </div>
+      
 
  <!-- <script>
       
@@ -137,61 +69,41 @@
       
       </script> -->
 
- <div class = "col-md-12" style= "padding:10px;">
-   <div class =  "help-block col-md-6" style="color: #bbbbbb">You have {{count.count}} Registered Users. :)
-   </div>
+      <div class = "col-md-12 col-xs-12 col-lg-12 col-sm-12" style= "padding:10px;">
+        <div class =  "help-block col-md-6" style="color: #bbbbbb">You have {{count.count}} Registered Users. :) </div>
+      </div>
 
-<div class = "col-md-12 col-xs-12 col-sm-12" style="background-color: #f1f1f1;">
- <!-- <div class="col-md-12 tab-pane fade" id="pastEvents" style="padding: 2px 0"> -->
- <div style="padding: 20px 0">
+      <div class = "col-xs-12 col-lg-12 col-sm-12 col-md-12" style="background-color: #f1f1f1;">
 
-  <!-- <link rel="stylesheet" type="text/css" href="res/css/homePageCSS.css"> -->
-  <!-- <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css"> -->
+        <div style="padding: 20px 0">
 
-<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3" ng-repeat="user in users_json_data" style="background-color: #f1f1f1; padding-top: 20px;">
-          <div class="categoryWrap" style = "display:flex; align-items:center; flex-direction:column;height:350px">
-          <div style = "display:flex; align-items:center">
-            <img src = "res/img/flat-avatar.png" class="catImage text-center" style=" margin-top: 20%;width:80px; height:80px; border-radius: 50px;">
-            </div>
-            <div class="catContent" style = "align-items:center">
-              <h3 class="titleHeading" style = "text-align:center">{{user.name}}
-              </h3>
-              <p class = "help-block" style = "text-align:center">{{user.registration_number}}<br> {{user.address}}</p>
-              <hr>
-              <div style="margin-bottom: 10px;">
-                <p style = "text-align:center">{{user.phone_number}}<br>{{user.email}}
-                </p>
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3" ng-repeat="user in users_json_data" style="background-color: #f1f1f1; padding-top: 20px;">
+            <div class="categoryWrap" style = "display:flex; align-items:center; flex-direction:column;height:350px">
+              <div style = "display:flex; align-items:center">
+                <img src = "res/img/flat-avatar.png" class="catImage text-center" style=" margin-top: 20%;width:80px; height:80px; border-radius: 50px;">
+              </div>
+              <div class="catContent" style = "align-items:center">
+                <h3 class="titleHeading" style = "text-align:center">{{user.name}}
+                </h3>
+                <p class = "help-block" style = "text-align:center">{{user.registration_number}}<br> {{user.address}}</p>
+                <hr>
+                <div style="margin-bottom: 10px;">
+                  <p style = "text-align:center">{{user.phone_number}}<br>{{user.email}}
+                  </p>
+                </div>
+                <br/>
+              </div>
+              <div class="cl">
               </div>
               <br/>
             </div>
-            
-          <!-- <div class="col-xs-12 " style = "text-align:center;"><br>
-            <a class="btn btn-info btnBg" >
-              <span>View Details
-              </span> 
-            </a>
-          </div> -->
-          <div class="cl">
+            <div class="cl">
+            </div>
+            <br/>
+            <br/>
           </div>
-          <br/>
-          </div>
-    <div class="cl">
+        </div>
+      </div>
     </div>
-    <br/>
-    <br/>
   </div>
-</div>
-
-
-</div>
-</div>
-
-</div>
-</div>
-
-
-
-
-
-
 </div>
