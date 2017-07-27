@@ -14,41 +14,41 @@
     ]
   },
   "User": {
-    "dataSource": "gym_app_database",
+    "dataSource": "gym_app",
     "public": false
   },
   "AccessToken": {
-    "dataSource": "gym_app_database",
+    "dataSource": "gym_app",
     "public": false
   },
   "ACL": {
-    "dataSource": "gym_app_database",
+    "dataSource": "gym_app",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "gym_app_database",
+    "dataSource": "gym_app",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "gym_app_database",
+    "dataSource": "gym_app",
     "public": false
   },
   "gym_user": {
-    "dataSource": "gym_app_database",
+    "dataSource": "gym_app",
     "public": true
   },
   "health_analytics": {
-    "dataSource": "gym_app_database",
+    "dataSource": "gym_app",
     "public": true
   },
   "Email": {
     "dataSource": "emailIDs"
   },
    "user": {
-    "dataSource": "gym_app_database",
+    "dataSource": "gym_app",
     "public": true
   }
 }

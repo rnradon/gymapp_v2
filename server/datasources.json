@@ -3,6 +3,7 @@
     "name": "db",
     "connector": "memory"
   },
+
    "gym_app_database": {
     "host": "localhost",
     "port": 27017,
@@ -13,6 +14,7 @@
     "user": "",
     "connector": "mongodb"
   },
+
   "gym_app":{
     "host": "35.184.213.125",
     "port": 27017,
@@ -23,6 +25,7 @@
     "user": "root",
     "connector": "mongodb"
 },
+
   "emailIDs": {
     "name": "emailIDs",
     "connector": "mail",

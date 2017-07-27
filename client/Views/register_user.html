@@ -6,20 +6,15 @@
   $.ajax({ url: '/api/gym_users?' + access_token ,
           context: document.body,
           success: function(response){
-             
-             document.getElementById("page_view").style.display = "block";
-             console.log("SUCCESS " + response)
-             
+             alert("done");
           },
-          
           error: function (response) {
             // document.getElementById("error").style.display = "block";
             // $('#error').delay(4000).fadeOut(300);
             // var resp = response.responseText
             // console.log(resp)
             // console.log(response)
-            alert("You are not authenticated to view this page")
-            setTimeout(function() { window.location.replace('/'); }, 0000)
+            alert("FAIL")
           },
         });
   });
@@ -46,7 +41,6 @@
 </div>
 </div>
 
-<div id = "page_view" style="display: none">
 <div class="container " id="main_form"> 
 
 <!-- <iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe" style="display: none;"></iframe> -->
@@ -124,5 +118,4 @@
 </div>
 
 
-</div>
 </div>
