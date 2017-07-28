@@ -85,6 +85,11 @@ var bodyParser = require('body-parser');
 
 var app = module.exports = loopback();
 
+// app.use(loopback.token({
+//     model: app.models.accessToken
+// }));
+
+
 // configure view handler
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));

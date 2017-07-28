@@ -45,10 +45,10 @@
                 
                 controller: 'view_users_controller'
             })
-            .when("/view_gym_user/user_found/id=:id/:access_token", {
-                templateUrl : "Views/view_user_redirect.html",
+            .when("/search/id=:search_key/:access_token?", {
+                templateUrl : "Views/view_user_search.html",
                 
-                // controller: 'edit_user_controller'
+                controller: 'search_user_controller'
             })
             .when("/change_password", {
                 templateUrl : "Views/change_password.html"
@@ -138,6 +138,23 @@
         .then(function(response) {
         // $scope.users_json_data = response.data;
         $scope.users_json_data = [10,20,30]
+        // $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales", "Tele Sales", "Corporate Sales"];
+        // $scope.data = [300, 500, 100, 40, 120];
+        // $scope.reg_number = $routeParams.registration_number;
+        });
+    }]);
+
+
+
+      app.controller('search_user_controller', ['$routeParams', '$scope', '$http', function($routeParams, $scope, $http ) {
+        
+        var key = $routeParams.search_key
+        var access_token = $routeParams.access_token
+        alert(access_token)
+        $http.get('/api/gym_users?filter[where][or][0][name][regexp]=/^' + key + '/i&filter[where][or][1][registration_number]=' + key +'&' + access_token)
+        .then(function(response) {
+        // $scope.users_json_data = response.data;
+        $scope.users_json_data = response.data
         // $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales", "Tele Sales", "Corporate Sales"];
         // $scope.data = [300, 500, 100, 40, 120];
         // $scope.reg_number = $routeParams.registration_number;
