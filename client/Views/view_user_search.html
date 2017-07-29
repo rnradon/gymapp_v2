@@ -3,7 +3,7 @@
 
 <!-- <h1 style="color: white">YO</h1> -->
 
-<div ng-include src="'Views/header_with_id.html'"></div>
+<div ng-include src="'Views/header_with_id.html'" style="padding-top: 20px; padding-left: 20px;"></div>
 <div ng-controller="search_user_controller">
 <script>
   $(window).ready(function(){  
@@ -62,11 +62,17 @@
 </script>
       </div>
 
-      <div class = "col-xs-12 col-lg-12 col-sm-12 col-md-12" style="background-color: #f1f1f1;">
+      <div class = "col-md-12 col-xs-12 col-lg-12 col-sm-12" style= "padding:10px;">
+        <div class =  "help-block col-md-6" style="color: #bbbbbb">Found {{count.count}} Users with the given search input. :) </div>
+      </div>
+
+      <div class = "col-xs-12 col-lg-12 col-sm-12 col-md-12" style="background-color: #f1f1f1; margin-top: 5%;">
 
         <div style="padding: 20px 0">
-
-          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3" ng-repeat="user in users_json_data" style="background-color: #f1f1f1; padding-top: 20px;">
+        <!-- <div ng-if="!users_json_data">YOOOOOOO</div> -->
+       
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3"  ng-repeat="user in users_json_data" style="background-color: #f1f1f1; padding-top: 20px;">
+          <!-- <div ng-if="!user.name">YOOOOOOO</div> -->
             <div class="categoryWrap" style = "display:flex; align-items:center; flex-direction:column;height:350px">
               <div style = "display:flex; align-items:center">
                 <img src = "res/img/flat-avatar.png" class="catImage text-center" style=" margin-top: 20%;width:80px; height:80px; border-radius: 50px;">

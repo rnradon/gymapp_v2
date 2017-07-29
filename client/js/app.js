@@ -150,15 +150,28 @@
         
         var key = $routeParams.search_key
         var access_token = $routeParams.access_token
-        alert(access_token)
+        // alert(access_token)
         $http.get('/api/gym_users?filter[where][or][0][name][regexp]=/^' + key + '/i&filter[where][or][1][registration_number]=' + key +'&' + access_token)
         .then(function(response) {
+
         // $scope.users_json_data = response.data;
         $scope.users_json_data = response.data
+        
         // $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales", "Tele Sales", "Corporate Sales"];
         // $scope.data = [300, 500, 100, 40, 120];
         // $scope.reg_number = $routeParams.registration_number;
         });
+
+
+
+        $http.get('/api/gym_users/count?[where][or][0][name][regexp]=/^' + key + '/i&[where][or][1][registration_number]=' + key + '&' + access_token)
+        .then(function(response) {
+        $scope.count = response.data;
+
+        // $scope.reg_number = $routeParams.registration_number;
+        // alert("CONTROLLER WORKS")
+        });  
+
     }]);
      
 
