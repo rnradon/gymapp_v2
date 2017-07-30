@@ -1,0 +1,45 @@
+<div ng-include src="'Views/header_with_id.html'" style="padding-top: 20px; padding-left: 20px;"></div>
+
+<div class="container">
+<div ng-controller="health_analytics_controller">
+<h1 style="color: #52b352">{{users_json_data.name}}'s Health Analytics</h1>
+<br/>
+<br/>
+<br/>
+  <table class="table table-striped table-hover" style="    background-color: #ecf5e2;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);">
+    <thead >
+      <tr>
+        <th style="text-align: center;">Weight</th>
+        <th style="text-align: center;">Impedance</th>
+        <th style="text-align: center;">BMI</th>
+        <th style="text-align: center;">Body Fat</th>
+        <th style="text-align: center;">Muscle</th>
+        <th style="text-align: center;">Water</th>
+        <th style="text-align: center;">Protein</th>
+        <th style="text-align: center;">Bone Mass</th>
+        <th style="text-align: center;">BMR</th>
+        <th style="text-align: center;">Visceral Fat</th>
+        <th style="text-align: center;">Date & Time</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in users_health_data" style="text-align: center;">
+        <td>{{user.weight}}</td>
+        <td>{{user.impedance}}</td>
+        <td>{{user.BMI}}</td>
+        <td>{{user.body_fat}}</td>
+        <td>{{user.muscle}}</td>
+        <td>{{user.water}}</td>
+        <td>{{user.protein}}</td>
+        <td>{{user.bone_mass}}</td>
+        <td>{{user.BMR}}</td>
+        <td>{{user.visceral_fat}}</td>
+        <td><time datetime=>{{user.date_time}}</time></td>
+
+      </tr>
+    </tbody>
+  </table>
+ </div>
+</div>

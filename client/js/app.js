@@ -50,6 +50,11 @@
                 
                 controller: 'search_user_controller'
             })
+            .when("/health_analytics/id=:id/:access_token", {
+                templateUrl : "Views/health_analytics.html",
+                
+                controller: 'health_analytics_controller'
+            })
             .when("/change_password", {
                 templateUrl : "Views/change_password.html"
             })
@@ -173,6 +178,31 @@
         });  
 
     }]);
+
+
+
+      app.controller('health_analytics_controller', ['$routeParams', '$scope', '$http', function($routeParams, $scope, $http ) {
+        
+        var id = $routeParams.id
+        var access_token = $routeParams.access_token
+        
+        $http.get('/api/gym_users/' + id + '?' + access_token)
+        .then(function(response) {
+        $scope.users_json_data = response.data;
+        // $scope.reg_number = $routeParams.registration_number;
+        // alert("CONTROLLER WORKS")
+        });
+
+
+        $http.get('/api/health_analytics?filter[where][gymUserId]=' + id + '&' + access_token)
+        .then(function(response) {
+        $scope.users_health_data = response.data;
+        
+        // $scope.reg_number = $routeParams.registration_number;
+        // alert("CONTROLLER WORKS")
+        });
+    }]);
+
      
 
 

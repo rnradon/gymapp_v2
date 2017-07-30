@@ -6,12 +6,6 @@
     "validateUpsert": true
   },
   "properties": {
-    "age": {
-      "type": "number"
-    },
-    "sex": {
-      "type": "string"
-    },
     "weight": {
       "type": "number"
     },
@@ -41,6 +35,9 @@
     },
     "visceral_fat": {
       "type": "number"
+    },
+    "date_time":{
+      "type": "date"
     }
   },
   "validations": [],

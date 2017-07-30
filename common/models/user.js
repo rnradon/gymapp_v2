@@ -23,6 +23,7 @@ module.exports = function(User) {
       if (err) return console.log('> error sending password reset email');
       console.log('> sending password reset email to:', info.email);
     });
+    console.log("in resetPasswordRequest")
   });
 
   //render UI page after password change
@@ -33,6 +34,7 @@ module.exports = function(User) {
       redirectTo: '/',
       redirectToLinkText: 'Log in'
     });
+    console.log("in changePassword")
   });
 
   //render UI page after password reset
@@ -44,5 +46,6 @@ module.exports = function(User) {
       redirectToLinkText: 'Log in'
     });
   });
+  console.log("in setPassword")
 };
 

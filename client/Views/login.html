@@ -44,6 +44,7 @@
         dataType : 'json',
         type: "POST",
         success : function (response) {
+          
             document.getElementById("success").style.display = "block";
             $('#success').delay(4000).fadeOut(300);
             console.log(response.id)

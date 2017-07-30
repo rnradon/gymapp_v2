@@ -57,14 +57,20 @@
 
 
       <div class = "col-md-12 col-xs-12 col-lg-12 col-sm-12" style= "padding:10px;">
-        <div class =  "help-block col-md-6" style="color: #bbbbbb">You have {{count.count}} Registered Users. :) </div>
+        <div class =  "help-block col-md-6" style="color: #0abb3b; font-weight: bold">You have {{count.count}} Registered Users. :) </div>
       </div>
 
-      <div class = "col-xs-12 col-lg-12 col-sm-12 col-md-12" style="background-color: #f1f1f1;">
+      <div class = "col-xs-12 col-lg-12 col-sm-12 col-md-12" style="background-color: ;">
 
         <div style="padding: 20px 0">
 
-          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3" ng-repeat="user in users_json_data" style="background-color: #f1f1f1; padding-top: 20px;">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3" id="div1" ng-repeat="user in users_json_data" style="background-color: ; padding-top: 20px;">
+          <script>
+          
+            var access_token = window.location.search.substring(1);
+            // 
+          </script>
+          <a href="/health_analytics/id={{user.id}}/" onclick = "location.href=this.href + access_token; return false;" class="anchor" style="text-decoration: none; color:#333">
             <div class="categoryWrap" style = "display:flex; align-items:center; flex-direction:column;height:350px">
               <div style = "display:flex; align-items:center">
                 <img src = "res/img/flat-avatar.png" class="catImage text-center" style=" margin-top: 20%;width:80px; height:80px; border-radius: 50px;">
@@ -84,6 +90,7 @@
               </div>
               <br/>
             </div>
+            </a>
             <div class="cl">
             </div>
             <br/>
