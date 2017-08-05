@@ -58,6 +58,9 @@
             .when("/change_password", {
                 templateUrl : "Views/change_password.html"
             })
+            .when("/change_pass_user", {
+                templateUrl : "Views/change_pass.html"
+            })
             .when("/charts", {
                 templateUrl : "Views/analytics_chart_user_reg_num.html",
                 

@@ -4,11 +4,11 @@
   "idInjection": true,
   "properties": {},
   "restrictResetPasswordTokenScope": true,
-  "emailVerificationRequired": false,
+  "emailVerificationRequired": true,
   "validations": [],
   "relations": {},
   "acls": [
-     {
+    {
       "principalType": "ROLE",
       "principalId": "$everyone",
       "accessType": "READ",

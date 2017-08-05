@@ -7,6 +7,44 @@ var config = require('../../server/config.json');
 var path = require('path');
 
 module.exports = function(User) {
+  //send verification email after registration
+  User.afterRemote('create', function(context, user, next) {
+    var options = {
+      type: 'email',
+      to: user.email,
+      from: 'noreply@loopback.com',
+      subject: 'Thanks for registering.',
+      template: path.resolve(__dirname, '../../server/views/verify.ejs'),
+      redirect: '/verified',
+      user: user
+    };
+
+    user.verify(options, function(err, response) {
+      if (err) {
+        User.deleteById(user.id);
+        return next(err);
+      }
+      context.res.render('response', {
+        title: 'Signed up successfully',
+        content: 'Please check your email and click on the verification link ' +
+            'before logging in.',
+        redirectTo: '/',
+        redirectToLinkText: 'Log in'
+      });
+    });
+  });
+  
+  // Method to render
+  User.afterRemote('prototype.verify', function(context, user, next) {
+    context.res.render('response', {
+      title: 'A Link to reverify your identity has been sent '+
+        'to your email successfully',
+      content: 'Please check your email and click on the verification link '+
+        'before logging in',
+      redirectTo: '/',
+      redirectToLinkText: 'Log in'
+    });
+  });
 
   //send password reset link when requested
   User.on('resetPasswordRequest', function(info) {
@@ -23,7 +61,6 @@ module.exports = function(User) {
       if (err) return console.log('> error sending password reset email');
       console.log('> sending password reset email to:', info.email);
     });
-    console.log("in resetPasswordRequest")
   });
 
   //render UI page after password change
@@ -34,7 +71,6 @@ module.exports = function(User) {
       redirectTo: '/',
       redirectToLinkText: 'Log in'
     });
-    console.log("in changePassword")
   });
 
   //render UI page after password reset
@@ -46,6 +82,4 @@ module.exports = function(User) {
       redirectToLinkText: 'Log in'
     });
   });
-  console.log("in setPassword")
 };
-

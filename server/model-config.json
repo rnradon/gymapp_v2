@@ -5,50 +5,42 @@
       "loopback/server/models",
       "../common/models",
       "./models"
-    ],
-    "mixins": [
-      "loopback/common/mixins",
-      "loopback/server/mixins",
-      "../common/mixins",
-      "./mixins"
     ]
   },
   "User": {
-    "dataSource": "gym_app",
+    "dataSource": "gym_app_database",
     "public": false
   },
   "AccessToken": {
-    "dataSource": "gym_app",
+    "dataSource": "gym_app_database",
     "public": false
   },
   "ACL": {
-    "dataSource": "gym_app",
+    "dataSource": "gym_app_database",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "gym_app",
-    "public": false,
-    "options": {
-      "strictObjectIDCoercion": true
-    }
+    "dataSource": "gym_app_database",
+    "public": false
   },
   "Role": {
-    "dataSource": "gym_app",
+    "dataSource": "gym_app_database",
     "public": false
   },
   "gym_user": {
-    "dataSource": "gym_app",
+    "dataSource": "gym_app_database",
     "public": true
   },
   "health_analytics": {
-    "dataSource": "gym_app",
+    "dataSource": "gym_app_database",
     "public": true
   },
   "Email": {
-    "dataSource": "emailIDs"
+    "dataSource": "emailDs"
   },
-   "user": {
-    "dataSource": "gym_app",
-    "public": true
+  "user": {
+    "dataSource": "gym_app_database",
+    "public": true,
+    "options": {}
   }
 }

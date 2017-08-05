@@ -100,9 +100,10 @@
       $('#myForm')
       .ajaxForm({
         url : '/api/gym_users', // or whatever
-        dataType : 'json',
+        dataType : 'html',
         success : function (response) {
-            window.scrollBy(0, 1000);
+            
+            window.scrollBy(0, -1000);
             document.getElementById("success").style.display = "block";
             $('#success').delay(4000).fadeOut(300);
             var resp = response.responseText
@@ -111,7 +112,9 @@
              setTimeout(function() { window.location.reload(true); }, 1000)
         },
         error: function (response) {
-            window.scrollBy(0, 1000);
+            // alert(response.responseText)
+            console.log("response " + response)
+            window.scrollBy(0, -1000);
             document.getElementById("error").style.display = "block";
             $('#error').delay(4000).fadeOut(300);
             var resp = response.responseText

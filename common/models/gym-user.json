@@ -1,6 +1,6 @@
 {
   "name": "gym_user",
-  "base": "User",
+  "base": "user",
   "idInjection": true,
   "options": {
     "validateUpsert": true
