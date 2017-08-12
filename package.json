@@ -24,7 +24,7 @@
     "loopback-component-explorer": "^2.1.0",
     "loopback-connector-mongodb": "^3.2.1",
     "serve-favicon": "^2.0.1",
-    "strong-error-handler": "^1.1.0"
+    "strong-error-handler": "^1.2.1"
   },
   "devDependencies": {
     "jshint": "^2.5.6",

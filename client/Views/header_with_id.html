@@ -22,7 +22,7 @@ function closeNav() {
   <a class="anchor" href="" id="edit"><i class="fa fa-pencil" aria-hidden="true"></i></i> Edit Member</a>
   <a class="anchor" href="" id="view"><i class="fa fa-book" aria-hidden="true"></i></i> View Members</a>
   <a class="anchor" href="" id="charts"><i class="fa fa-area-chart" aria-hidden="true"></i> Analysis</a>
-  <a class="anchor" href="/change_password"><i class="fa fa-key" aria-hidden="true"></i> Change Password</a>
+  <a class="anchor" href="" id="change_auth_password"><i class="fa fa-key" aria-hidden="true"></i> Change Password</a>
   <a class="anchor" href="" id="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
   
   <!-- <a href="#">Clients</a>
@@ -75,6 +75,13 @@ function closeNav() {
   });
 
 
+   $("#change_auth_password").click(function logout(){
+    // var access_token = window.location.search.substring(1);
+    var url = '/change_auth_password?' + access_token
+    window.location.href = url;
+            
+    
+  });
 
 
     $("#home").click(function logout(){

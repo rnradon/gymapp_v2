@@ -13,11 +13,29 @@ module.exports = function(User) {
       type: 'email',
       to: user.email,
       from: 'noreply@loopback.com',
-      subject: 'Thanks for registering.',
+      subject: 'no-reply.',
       template: path.resolve(__dirname, '../../server/views/verify.ejs'),
       redirect: '/verified',
-      user: user
+      user: user,
+      protocol: 'https',
+      host : "scenic-parity-172915.appspot.com",
+      port : "1234"
     };
+
+    // var options = {
+    //   type: 'email',
+    //   to: user.email,
+    //   from: 'noreply@loopback.com',
+    //   subject: 'no-reply.',
+    //   template: path.resolve(__dirname, '../../server/views/verify.ejs'),
+    //   redirect: '/verified',
+    //   user: user,
+    //   protocol: 'https',
+    //   host : "scenic-parity-172915.appspot.com",
+    //   // access_token: generateVerificationToken,
+    //   text: 'https://scenic-parity-172915.appspot.com' + '/api/users/confirm?uid=' + user.id + '&redirect=%2Fverified&token=' +  access_token
+    //  // port : "1234"
+    // };
 
     user.verify(options, function(err, response) {
       if (err) {
@@ -48,7 +66,7 @@ module.exports = function(User) {
 
   //send password reset link when requested
   User.on('resetPasswordRequest', function(info) {
-    var url = 'http://' + config.host + ':' + config.port + '/reset-password';
+    var url = 'http://' +  config.host + ':' + config.port + '/reset-password';
     var html = 'Click <a href="' + url + '?access_token=' +
         info.accessToken.id + '">here</a> to reset your password';
 

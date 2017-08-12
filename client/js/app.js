@@ -55,11 +55,18 @@
                 
                 controller: 'health_analytics_controller'
             })
-            .when("/change_password", {
-                templateUrl : "Views/change_password.html"
+            //gym user password reset
+            .when("/change_gym_user_password", {
+                templateUrl : "Views/change_gym_user_password.html"
             })
-            .when("/change_pass_user", {
-                templateUrl : "Views/change_pass.html"
+            //admin password reset
+            .when("/change_auth_password:userId?", {
+                templateUrl : "Views/change_auth_password.html",
+
+                controller: 'change_auth_password'
+            })
+            .when("/forgot_password", {
+                templateUrl : "Views/change_auth_password.html"
             })
             .when("/charts", {
                 templateUrl : "Views/analytics_chart_user_reg_num.html",
@@ -208,7 +215,23 @@
 
      
 
+     app.controller('change_auth_password', ['$routeParams', '$scope', '$http', function($routeParams, $scope, $http ) {
+        
+    
+        var access_token = $routeParams.access_token
+        $http.get('/api/users?access_token=' + access_token)
+        .then(function successCallback(response) {
+            // alert("SUCCESS")
+          }, function errorCallback(response) {
+            alert("Authorization Timed Out !")
+                window.location.href = '/';
+          });
+        
 
+
+
+
+    }]);
 // run(['$rootScope', function($rootScope) {
 //     $rootScope.$on("$routeChangeSuccess", function(event, next, current) {
 //         $rootScope.showHeader = next.$$route.showHeader;

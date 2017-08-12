@@ -19,9 +19,11 @@
     },
     "cors": false
   },
+  "swagger": {
+    "protocol": "https"
+  },
   "legacyExplorer": false,
   "logoutSessionsOnSensitiveChanges": true,
-
 
 
   "GCLOUD_PROJECT": "scenic-parity-172915",
