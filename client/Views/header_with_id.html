@@ -54,7 +54,9 @@ function closeNav() {
                 //       $scope.myWelcome = response.data;
                 //   });
                 // });
-                window.location.replace('/');
+                // var backlen = history.length;
+                // history.go(-backlen);
+                window.location.href = '/';
             },
             error: function (response) {
                 // alert("Authentication Timed Out")
