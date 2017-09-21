@@ -5,6 +5,7 @@
 
 <div id=" ">
 <div ng-include src="'Views/header_with_id.html'" style="padding-top: 20px; padding-left: 20px;"></div>
+
 <script>
    $(window).ready(function(){  
         // var access_token = window.location.search.substring(1);
@@ -33,6 +34,7 @@
                   alert("You are not authenticated to view this page")
                   setTimeout(function() { window.location.replace('/'); }, 0000)
                 },
+                cache: false,
               });
         });
 </script>
@@ -79,7 +81,6 @@
       </div>
       </div>
     </fieldset>
-    
       <button name="submit" type="submit" id="contact-submit" class="edit">Submit</button>
       <script>
 
@@ -93,9 +94,10 @@
 
          $('#myForm')
         .ajaxForm({
-            method: 'PUT',
+            method: 'PATCH',
             url : '/api/gym_users/' + id + '?' + 'access_token=' + access_token, // or whatever
             dataType : 'json',
+            
             success : function (response) {
                 alert("Successfully edited the user.")
                 // var app = angular.module('my_app', []);
@@ -109,9 +111,11 @@
                 window.location.href = url; //CHANGE THIS TO VIEW USER CARD
             },
             error: function (response) {
-                alert("Invalid Registration Number. The page will reload automatically. Please enter the correct Registration Number")
+                alert(response)
+                console.log(response)
                 // setTimeout(function() { window.location.reload(true); }, 2000)
             },
+            cache: false,
         });
           
         });

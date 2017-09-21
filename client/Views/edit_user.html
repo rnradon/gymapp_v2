@@ -20,6 +20,7 @@
             alert("You are not authenticated to view this page")
             setTimeout(function() { window.location.replace('/'); }, 0000)
           },
+          cache: false,
         });
   });
 </script>
@@ -98,6 +99,7 @@
                 alert("Invalid Registration Number. The page will reload automatically. Please enter the correct Registration Number")
                 setTimeout(function() { window.location.reload(true); }, 2000)
             },
+            cache: false,
         });
           
         });

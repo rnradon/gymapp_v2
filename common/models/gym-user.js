@@ -8,31 +8,31 @@ var path = require('path');
 
 module.exports = function(User) {
   //send verification email after registration
-  User.afterRemote('create', function(context, user, next) {
-    var options = {
-      type: 'email',
-      to: user.email,
-      from: 'noreply@loopback.com',
-      subject: 'Thanks for registering.',
-      template: path.resolve(__dirname, '../../server/views/verify.ejs'),
-      redirect: '/verified',
-      user: user
-    };
+  // User.afterRemote('create', function(context, user, next) {
+  //   var options = {
+  //     type: 'email',
+  //     to: user.email,
+  //     from: 'noreply@loopback.com',
+  //     subject: 'Thanks for registering.',
+  //     template: path.resolve(__dirname, '../../server/views/verify.ejs'),
+  //     redirect: '/verified',
+  //     user: user
+  //   };
 
-    user.verify(options, function(err, response) {
-      if (err) {
-        User.deleteById(user.id);
-        return next(err);
-      }
-      context.res.render('response', {
-        title: 'Signed up successfully',
-        content: 'Please check your email and click on the verification link ' +
-            'before logging in.',
-        redirectTo: '/',
-        redirectToLinkText: 'Log in'
-      });
-    });
-  });
+  //   user.verify(options, function(err, response) {
+  //     if (err) {
+  //       User.deleteById(user.id);
+  //       return next(err);
+  //     }
+  //     context.res.render('response', {
+  //       title: 'Signed up successfully',
+  //       content: 'Please check your email and click on the verification link ' +
+  //           'before logging in.',
+  //       redirectTo: '/',
+  //       redirectToLinkText: 'Log in'
+  //     });
+  //   });
+  // });
   
   // Method to render
   User.afterRemote('prototype.verify', function(context, user, next) {
@@ -48,7 +48,8 @@ module.exports = function(User) {
 
   //send password reset link when requested
   User.on('resetPasswordRequest', function(info) {
-    var url = 'http://' + config.host + ':' + config.port + '/reset-password-gym';
+    // var url = 'http://' + config.host + ':' + config.port + '/reset-password-gym';
+    var url = 'https://scenic-parity-172915.appspot.com/reset-password-gym';
     var html = 'Click <a href="' + url + '?access_token=' +
         info.accessToken.id + '">here</a> to reset your password';
 

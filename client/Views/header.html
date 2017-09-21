@@ -35,6 +35,7 @@ var access_token = window.location.search.substring(1);
    $("#logout").click(function logout(){
     
     var url = '/logout?' + access_token
+    // alert("YES")
     alert(url)
     $.ajax({
             method: 'POST',
@@ -56,6 +57,7 @@ var access_token = window.location.search.substring(1);
                 alert("Authentication Timed Out")
                 // setTimeout(function() { window.location.reload(true); }, 2000)
             },
+            cache: false,
         });
 
     

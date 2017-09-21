@@ -4,23 +4,14 @@
     "connector": "memory"
   },
 
-   "gym_app_database": {
-    "host": "localhost",
-    "port": 27017,
-    "url": "",
-    "database": "gym_app_database",
-    "password": "",
-    "name": "gym_app_database",
-    "user": "",
-    "connector": "mongodb"
-  },
+
 
   "gym_app":{
-    "host": "35.188.216.25",
+    "host": "35.202.122.71",
     "port": 27017,
-    "url": "mongodb://root:krnP3qKN@35.188.216.25:27017",
+    "url": "mongodb://root:CttFToN9@35.202.122.71:27017",
     "database": "gym_app",
-    "password": "krnP3qKN",
+    "password": "CttFToN9",
     "name": "gym_app",
     "user": "root",
     "connector": "mongodb"
