@@ -6,7 +6,7 @@
   $.ajax({ url: '/api/gym_users?' + access_token ,
           context: document.body,
           success: function(response){
-             alert("done");
+             // alert("done");
           },
           error: function (response) {
             // document.getElementById("error").style.display = "block";
@@ -70,7 +70,7 @@
       $(document).ready(function(){
         $("button").click(function (){
           var reg_number = $("#registration_number").val();
-          alert(reg_number)
+          // alert(reg_number)
         var access_token = window.location.search.substring(1);
         $('#myForm')
           .ajaxForm({
@@ -78,7 +78,7 @@
             url : '/api/gym_users/findOne?filter[where][registration_number]=' + reg_number + '&' + access_token, // or whatever
             dataType : 'json',
             success : function (response) {
-                alert(reg_number)
+                // alert(reg_number)
                 console.log(response.id)
                 // var app = angular.module('my_app', []);
                 // app.controller('myCtrl', function($scope, $http) {
@@ -92,7 +92,7 @@
             },
             error: function (response) {
                 alert("Invalid Registration Number. The page will reload automatically. Please enter the correct Registration Number")
-                setTimeout(function() { window.location.reload(true); }, 2000)
+                window.location.reload();
             },
             cache: false,
         });

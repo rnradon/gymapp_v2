@@ -6,7 +6,7 @@
   $.ajax({ url: '/api/gym_users?' + access_token ,
           context: document.body,
           success: function(response){
-             alert("done");
+             // alert("done");
           },
           error: function (response) {
             // document.getElementById("error").style.display = "block";
@@ -28,7 +28,7 @@
 <div class="col-md-3 col-sm-0 col-xs-0"></div>
 <div class="col-md-3 col-sm-0 col-xs-0"></div><br/>
 <div class="col-md-6 col-sm-12" id = "success" style="color: white;font-size: 13px;background-color: #4caf50;border-radius: 5px; display: none; width: 90%; text-align: center; margin-left: 5%;">
-  Credentials Submitted Successfully. Page will automatically reload now !
+  
 </div> 
 </div>
 </div>
@@ -52,7 +52,7 @@
     <script>
         $("#back_to_admin_landing_page").click(function back_to_admin_landing_page(){
           var access_token = window.location.search.substring(1);
-          var url = '/admin?' + access_token
+          var url = '/view_gym_users?' + access_token
           window.location.href = url
         });
     </script>
@@ -104,22 +104,16 @@
         dataType : 'html',
         success : function (response) {
             
-            window.scrollBy(0, -1000);
-            document.getElementById("success").style.display = "block";
-            $('#success').delay(4000).fadeOut(300);
-            var resp = response.responseText
-            console.log(resp)
+            alert("Credentials Submitted Successfully. You'll be redirected to the admin page now !")
+            var url = '/view_gym_users?' + access_token
+            window.location.href = url
             // location.delay(2000).reload();
-             setTimeout(function() { window.location.reload(true); }, 1000)
+             // setTimeout(function() { window.location.reload(true); }, 1000)
         },
         error: function (response) {
             // alert(response.responseText)
-            console.log("response " + response)
-            window.scrollBy(0, -1000);
-            document.getElementById("error").style.display = "block";
-            $('#error').delay(4000).fadeOut(300);
-            var resp = response.responseText
-            console.log(resp)
+            alert("User Already Exists / Enter the Correct Details !")
+            window.location.reload();
         },
         cache: false,
     });

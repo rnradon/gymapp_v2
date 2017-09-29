@@ -22,6 +22,9 @@
       "type": "number",
       "required": true
     },
+    "date_of_birth":{
+      "type": "date"
+    },
     "age": {
       "type": "number",
       "required": false

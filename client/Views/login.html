@@ -52,8 +52,8 @@
             document.getElementById("success").style.display = "block";
             $('#success').delay(4000).fadeOut(300);
             console.log(response.id)
-            
-             setTimeout(function() { window.location.replace('/admin?access_token=' + response.id); }, 2000)
+            // window.location.replace('/view_gym_users?access_token=' + response.id);
+             setTimeout(function() { window.location.replace('/view_gym_users?access_token=' + response.id); }, 1500)
             
         },
         error: function (response) {

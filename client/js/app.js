@@ -1,6 +1,6 @@
 (function(){
 
-    var app = angular.module("myApp", ["ngRoute","ui.router",'chart.js']);
+    var app = angular.module("myApp", ["ngRoute","ui.router"]);
     app.config(function($routeProvider, $locationProvider, $httpProvider) {
         // $stateProvider
         //     .state('add-review', {

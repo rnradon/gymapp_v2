@@ -57,7 +57,7 @@
     <script>
         $("#back_to_admin_landing_page").click(function back_to_admin_landing_page(){
           var access_token = window.location.search.substring(1);
-          var url = '/admin?' + access_token
+          var url = '/view_gym_users?' + access_token
           window.location.href = url
         });
     </script>
@@ -83,7 +83,7 @@
             url : '/api/gym_users/findOne?filter[where][registration_number]=' + reg_number + '&' + access_token, // or whatever
             dataType : 'json',
             success : function (response) {
-                alert(reg_number)
+                // alert(reg_number)
                 console.log(response.id)
                 // var app = angular.module('my_app', []);
                 // app.controller('myCtrl', function($scope, $http) {
@@ -97,7 +97,7 @@
             },
             error: function (response) {
                 alert("Invalid Registration Number. The page will reload automatically. Please enter the correct Registration Number")
-                setTimeout(function() { window.location.reload(true); }, 2000)
+                window.location.reload()
             },
             cache: false,
         });
