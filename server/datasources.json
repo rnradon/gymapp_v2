@@ -6,16 +6,16 @@
 
 
 
-  "gym_app":{
-    "host": "35.202.122.71",
-    "port": 27017,
-    "url": "mongodb://root:CttFToN9@35.202.122.71:27017",
-    "database": "gym_app",
-    "password": "CttFToN9",
-    "name": "gym_app",
+"gym_app": {
+    "host": "ds117965.mlab.com",
+    "port": 17965,
+    "url": "mongodb://root:1234@ds117965.mlab.com:17965/gym_app_database",
+    "database": "gym_app_database",
+    "password": "1234",
+    "name": "gym_app_database",
     "user": "root",
     "connector": "mongodb"
-},
+  },
 
   "emailDs": {
     "name": "emailDs",
