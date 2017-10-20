@@ -61,7 +61,7 @@
     <a href="" id="back_to_admin_landing_page"><button name="submit" type="submit" id="contact-submit" style="background-color: #4c96af; margin-bottom: 3%">Back</button></a>
     <form id = "myForm" action="" method="put" target="dummyframe">
     <fieldset>
-      <input id="registration_number" type="number" tabindex="1" name="registration_number" required value={{users_json_data.registration_number}}  style="width: 100%; padding-left: 10px;">
+      <input id="registration_number" type="number" tabindex="1" name="registration_number" readonly required value={{users_json_data.registration_number}}  style="width: 100%; padding-left: 10px;">
     </fieldset>
     <fieldset>
       <input placeholder="Name" type="text" tabindex="3" value={{users_json_data.name}} required name="name">
@@ -70,7 +70,7 @@
       <input placeholder="Address" type="text" tabindex="4" value={{users_json_data.address}} required name="address">
     </fieldset>
     <fieldset>
-      <input placeholder="Email" type="email" tabindex="5" value={{users_json_data.email}} required name="email">
+      <input placeholder="Email" type="email" tabindex="5" value={{users_json_data.email}} readonly required name="email">
     </fieldset>
     <fieldset>
       <div class="row">
