@@ -49,7 +49,7 @@ module.exports = function(User) {
   //send password reset link when requested
   User.on('resetPasswordRequest', function(info) {
     // var url = 'http://' + config.host + ':' + config.port + '/reset-password-gym';
-    var url = 'https://scenic-parity-172915.appspot.com/reset-password-gym';
+    var url = 'https://gymfitnessfirst.herokuapp.com/reset-password-gym';
     var html = 'Click <a href="' + url + '?access_token=' +
         info.accessToken.id + '">here</a> to reset your password';
 
