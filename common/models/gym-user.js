@@ -33,6 +33,9 @@ module.exports = function(User) {
   //     });
   //   });
   // });
+
+
+  User.validatesUniquenessOf('phone_number');
   
   // Method to render
   User.afterRemote('prototype.verify', function(context, user, next) {
@@ -84,3 +87,6 @@ module.exports = function(User) {
     });
   });
 };
+
+
+
