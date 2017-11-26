@@ -107,11 +107,11 @@
                 //       $scope.myWelcome = response.data;
                 //   });
                 // });
-                var url = '/admin?access_token=' + access_token
+                var url = '/view_gym_users?access_token=' + access_token
                 window.location.href = url; //CHANGE THIS TO VIEW USER CARD
             },
             error: function (response) {
-                // alert(response)
+                alert("User with same details already exists -\n(Phone Number must be unique)\n\n | In-correct details ! |")
                 console.log(response)
                 // setTimeout(function() { window.location.reload(true); }, 2000)
             },
