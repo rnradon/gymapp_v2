@@ -36,6 +36,9 @@
     "visceral_fat": {
       "type": "number"
     },
+    "fitness_age": {
+      "type": "number"
+    },
     "date_time":{
       "type": "date"
     }
